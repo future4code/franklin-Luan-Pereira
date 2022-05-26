@@ -24,17 +24,18 @@ function App() {
           texto="Ver mais"
         />
       </div>
-      <CardPequeno 
-        imagem={emailIcone}
-        categoria="Email"
-        dado="w.luan@yahoo.com"
-      />
-      <CardPequeno
-        imagem={localIcone}
-        categoria="Endereço"
-        descricao="Rua Nossa Sr Copacabana, 132"
-      />
-
+      <div className="page-section-container">
+        <CardPequeno 
+          imagem={emailIcone}
+          categoria="Email"
+          dado="w.luan@yahoo.com"
+        />
+        <CardPequeno
+          imagem={localIcone}
+          categoria="Endereço"
+          dado="Rua Nossa Sr Copacabana, 132"
+        />
+      </div>
       <div className="page-section-container">
         <h2>Experiências profissionais</h2>
         <CardGrande 
