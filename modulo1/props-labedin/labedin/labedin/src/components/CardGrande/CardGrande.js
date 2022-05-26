@@ -7,6 +7,7 @@ const BigCard = styled.div`
     align-items: center;
     justify-content: space-between;
     border: 1px solid #000000;
+    border-radius: 15px;
     padding: 20px 40px;
     margin-bottom: 10px;
     height: 200px;

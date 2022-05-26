@@ -9,6 +9,7 @@ const SmallCard = styled.div`
     align-items: center;
 
     border: 1px solid #000000;
+    border-radius: 15px;
     padding: 20px 40px;
     margin-bottom: 10px;
     height: 100px;
