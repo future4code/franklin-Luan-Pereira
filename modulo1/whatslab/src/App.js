@@ -1,23 +1,27 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import "./App.css";
-import sendIcon from "img/iconeSend.png"
+
+import sendIcon from "./img/send.png"
+import labenuIcon from "./img/labenu.png"
+import phoneIcon from "./img/phone.png" 
+
 
 function App() {
   const MsgBaloon = styled.div`
-    border-radius: 10px;
+    border-radius: 20px;
     margin: 10px;
-    padding: 15px 40px 15px 15px;
+    padding: 10px 40px 10px 15px;
     background-color: #ffffff;
     width: max-content;
     box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
   `;
 
   const MsgBaloonMe = styled.div`
-    border-radius: 10px;
+    border-radius: 20px;
     margin: 10px 10px 10px auto;
-    padding: 15px 40px 15px 15px;
-    background-color: #ffffff;
+    padding: 10px 40px 10px 15px;
+    background-color: #90ee90;
     width: max-content;
     box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
   `;
@@ -30,7 +34,7 @@ function App() {
   `;
 
   const MsgBaloonText = styled.span`
-    word-wrap: wrap;
+    word-break: break-all;
     max-width: 400px;
     display: block;
     font-size: 18px;
@@ -91,6 +95,13 @@ function App() {
   return (
     <div className="App">
       <div className="container">
+        <div className="header">
+          <img className="Labenu" src={labenuIcon}/>
+          <div className = "GroupName">
+            <p>WhatsLab DESENVOLVE LABENU</p>
+            <h6>+55 (21) 969503434, Labenu, ...</h6>
+          </div>
+        </div>
         <div>{messageComponent}</div>
         <section className="interacaoUser">
           <input
@@ -106,7 +117,7 @@ function App() {
             placeholder={"Mensagem"}
           />
           <button className="btnForward" onClick={onClickSendMessage}>
-            {sendIcon}
+            <img src={sendIcon}/>
           </button>
         </section>
       </div>

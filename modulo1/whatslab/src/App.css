@@ -9,14 +9,59 @@ body {
 
 .container {
   margin-top: 50px;
-  border: 1px solid black;
-  border-radius: 10px;
+  border: none;
+  border-radius: 20px;
   position: relative;
   background-color: #9bd8b6;
+  min-width: 500px;
   width: 40%;
   margin: auto;
   height: 90vh;
+  background-image: url("./img/whatsappBackground.png");
+  box-shadow: 2px 3px 2px 0px rgba(0, 0, 0, 0.12);
 }
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  background-color: teal;
+  width: 100%;
+  margin: auto;
+  align-items: flex-start;
+  box-shadow: 2px 3px 2px 0px rgba(0, 0, 0, 0.12);
+}
+
+.Labenu {
+  height: 40px;
+  margin: 25px 20px 20px 25px;
+  padding: 1.5px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background-color: white;
+
+}
+
+.GroupName {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.header p {
+  font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 0;
+  color: white;
+}
+
+.header h6 {
+  margin-top: 0;
+  margin-bottom: 13px;
+  color: white;
+  font-weight: light;
+}
+
 
 .interacaoUser {
   display: flex;
@@ -46,7 +91,7 @@ body {
   margin: 8px;
   padding: 10px 0;
   padding-left: 10px;
-  width: 230px;
+  width: 280px;
   border-radius: 10px;
   border: none;
   outline: none;
@@ -58,10 +103,11 @@ body {
   padding: 10px;
   padding-left: 15px;
   width: max-content;
-  border-radius: 10px;
+  border-radius: 30px;
   border: none;
   outline: none;
-  border: 2px solid white;
+  background-color: #33b3a4;
+  
 }
 
 .msgText {
@@ -71,7 +117,7 @@ body {
 .msgName {
   display: block;
   margin-top: 10px;
-  
+
   font-weight: bold;
   color: black;
   font-size: 14px;
