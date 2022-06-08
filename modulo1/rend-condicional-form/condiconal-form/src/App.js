@@ -7,7 +7,7 @@ import { Etapa3 } from './components/Etapa3';
 import { Final } from './components/Final';
 
 function App() {
-
+  const [state, setState] = useState()
 
   return (
     <div className="App">
