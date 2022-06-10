@@ -1,0 +1,134 @@
+body {
+  background-color: #ccc;
+}
+
+.App {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin-top: 50px;
+  border: none;
+  border-radius: 20px;
+  position: relative;
+  background-color: #9bd8b6;
+  min-width: 500px;
+  width: 40%;
+  margin: auto;
+  height: 90vh;
+  background-image: url("./img/whatsappBackground.png");
+  box-shadow: 2px 3px 2px 0px rgba(0, 0, 0, 0.12);
+}
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  background-color: teal;
+  width: 100%;
+  margin: auto;
+  align-items: flex-start;
+  box-shadow: 2px 3px 2px 0px rgba(0, 0, 0, 0.12);
+}
+
+.Labenu {
+  height: 40px;
+  margin: 25px 20px 20px 25px;
+  padding: 1.5px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background-color: white;
+
+}
+
+.GroupName {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.header p {
+  font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 0;
+  color: white;
+}
+
+.header h6 {
+  margin-top: 0;
+  margin-bottom: 13px;
+  color: white;
+  font-weight: light;
+}
+
+
+.interacaoUser {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.interacaoUser .inputUser {
+  padding: 10px 0;
+  padding-left: 10px;
+  width: 80px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  border: 2px solid white;
+}
+
+.interacaoUser .inputUser:focus,
+.interacaoUser .inputMessage:focus {
+  border: 2px solid #90ee90;
+}
+
+.interacaoUser .inputMessage {
+  margin: 8px;
+  padding: 10px 0;
+  padding-left: 10px;
+  width: 280px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  border: 2px solid white;
+}
+
+.btnForward {
+  cursor: pointer;
+  padding: 10px;
+  padding-left: 15px;
+  width: max-content;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  background-color: #33b3a4;
+  
+}
+
+.msgText {
+  display: block;
+}
+
+.msgName {
+  display: block;
+  margin-top: 10px;
+
+  font-weight: bold;
+  color: black;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.msg {
+  border-radius: 10px;
+  margin: 10px;
+  padding: 0px 100px 0 20px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  width: max-content;
+}
