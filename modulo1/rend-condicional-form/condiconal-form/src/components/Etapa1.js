@@ -1,6 +1,6 @@
 import React from "react";
 
-const Etapa1 = () => {
+const Etapa1 = ({aoEnviar}) => {
   return (
     <div>
       <h1>ETAPA 1 - DADOS GERAIS</h1>
@@ -17,8 +17,9 @@ const Etapa1 = () => {
         <option>Ensino Superior incompleto</option>
         <option>Ensino Superior completo</option>
       </select>
+
     </div>
   ); 
 };
 
-export { Etapa1 };
+export default Etapa1;

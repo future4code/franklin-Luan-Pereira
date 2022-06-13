@@ -10,4 +10,4 @@ const Final = () => {
     );
 }
 
-export {Final};
+export default Final;

@@ -18,4 +18,4 @@ const Etapa3 = () => {
 
 }
 
-export {Etapa3};
+export default Etapa3;
