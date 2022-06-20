@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 function App() {
+
   // State to Playlist
   const [playlist, setPlaylist] = useState([]);
   const [inputNewPlaylist, setInputNewPlaylist] = useState("");
@@ -192,6 +193,7 @@ function App() {
               <li> Nome: {eachSong.name}</li>
               <li> Artista: {eachSong.artist}</li>
               <li> URL: {eachSong.url}</li>
+              <iframe width="450" height="100" src={eachSong.url.replace("watch?v=","embed/")} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
             </div>
           );
           })}
