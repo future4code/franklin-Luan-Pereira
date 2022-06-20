@@ -2,8 +2,16 @@ import "./App.css";
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import styled from "styled-components";
 
 function App() {
+
+  const DeletePlaylistButton = styled.button`
+    background-color: transparent;
+    border-color: red;
+    color: red;
+    margin-right: 5px;
+  `
 
   // State to Playlist
   const [playlist, setPlaylist] = useState([]);
@@ -159,72 +167,72 @@ function App() {
   useEffect(getAllPlaylists, []);
   return (
     <div className="App">
-      <div>
-        <h1> Playlist atualizada </h1>
-        {playlist.map((eachPlaylist) => {
-          return (
-            <div>
-              <button onClick={() => {getPlaylistTracks(eachPlaylist.id)}}>
-                <li key={eachPlaylist.id}>{eachPlaylist.name} </li>
-              </button>
-              <button onClick={() => deletePlaylist(eachPlaylist.id)}> Apagar </button>
-            </div>
-          );
-        })}
-      </div>
-      <div>
-        <h1> Playlists </h1>
-        <input
-          placeholder="Nome da Playlist"
-          value={inputNewPlaylist}
-          onChange={(element) => {
-            setInputNewPlaylist(element.target.value);
-          }}
-        />
-        <button onClick={createPlaylists}>Criar Playlist</button>
-      </div>
-      <div>
-        <h1> Conteudo Playlist</h1>
+      <div className="container">
         <div>
-        {contentPlaylist.map((eachSong) => {
-          return (
-            <div>
-              <button onClick={() => {deleteSong(eachSong.id)}}> Apagar </button>
-              <li> Nome: {eachSong.name}</li>
-              <li> Artista: {eachSong.artist}</li>
-              <li> URL: {eachSong.url}</li>
-              <iframe width="450" height="100" src={eachSong.url.replace("watch?v=","embed/")} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
-            </div>
-          );
+          <h1> Bom dia </h1>
+          {playlist.map((eachPlaylist) => {
+            return (
+              <div>
+                <DeletePlaylistButton onClick={() => deletePlaylist(eachPlaylist.id)}> X </DeletePlaylistButton>
+                <button onClick={() => {getPlaylistTracks(eachPlaylist.id)}}>
+                  <li key={eachPlaylist.id}>{eachPlaylist.name} </li>
+                </button>
+              </div>
+            );
           })}
         </div>
+        <div>
+          <h2> Faça suas playlists </h2>
+          <input
+            placeholder="Nome da Playlist"
+            value={inputNewPlaylist}
+            onChange={(element) => {
+              setInputNewPlaylist(element.target.value);
+            }}
+          />
+          <button onClick={createPlaylists}>Criar Playlist</button>
+        </div>
+        <div>
+          <h2> Escolhidas por você </h2>
+          <h3> Adicionar música</h3>
+          <input
+            placeholder="Nome da Musica"
+            value={inputNewSongName}
+            onChange={(element) => {
+              setInputNewSongName(element.target.value);
+            }}
+            />
+          <input
+            placeholder="Nome do Artista"
+            value={inputNewArtist}
+            onChange={(element) => {
+              setInputNewArtist(element.target.value);
+            }}
+          />
+          <input
+            placeholder="URL do youtube"
+            value={inputNewURL}
+            onChange={(element) => {
+              setInputNewURL(element.target.value);
+            }}
+            />
+          <button onClick={() => addSong(idPlaylist)}>Enviar</button>
+          </div>
+          <br/>
+          <div>
+          {contentPlaylist.map((eachSong) => {
+            return (
+              <div>
+                <button onClick={() => {deleteSong(eachSong.id)}}> Apagar </button>
+                <li> Nome: {eachSong.name}</li>
+                <li> Artista: {eachSong.artist}</li>
+                <li> URL: {eachSong.url}</li>
+                <iframe width="450" height="100" src={eachSong.url.replace("watch?v=","embed/")} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+              </div>
+            );
+            })}
+          </div>
       </div>
-      <div>
-        <h1> Adiciona Musicas</h1>
-        <input
-          placeholder="Nome da Musica"
-          value={inputNewSongName}
-          onChange={(element) => {
-            setInputNewSongName(element.target.value);
-          }}
-        />
-        <input
-          placeholder="Nome do Artista"
-          value={inputNewArtist}
-          onChange={(element) => {
-            setInputNewArtist(element.target.value);
-          }}
-        />
-        <input
-          placeholder="URL do youtube"
-          value={inputNewURL}
-          onChange={(element) => {
-            setInputNewURL(element.target.value);
-          }}
-        />
-        <button onClick={() => addSong(idPlaylist)}>Enviar</button>
-      </div>
-
     </div>
   );
 }
