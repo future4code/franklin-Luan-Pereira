@@ -227,7 +227,7 @@ function App() {
                 <li> Nome: {eachSong.name}</li>
                 <li> Artista: {eachSong.artist}</li>
                 <li> URL: {eachSong.url}</li>
-                <iframe width="450" height="100" src={eachSong.url.replace("watch?v=","embed/")} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+                <iframe width="130" height="90" src={eachSong.url.replace("watch?v=","embed/").concat("?controls=0")} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
               </div>
             );
             })}
