@@ -4,14 +4,72 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
 
+import playlistimage from "./assets/playlist-image.png"
+
 function App() {
 
-  const DeletePlaylistButton = styled.button`
-    background-color: transparent;
-    border-color: red;
-    color: red;
-    margin-right: 5px;
+  const MyPlaylists = styled.div`
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
   `
+
+  const EachPlaylist = styled.div`
+    background-color:#262626;
+    margin: 3px 0;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+    &:hover{
+      background-color: #323133;
+    }
+
+  `
+
+  const ImagePlaylist = styled.img`
+    max-width: 65px;
+  `
+
+  const DeletePlaylistButton = styled.button`
+    background-color: red;
+    color: red;
+    width: 4px;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+    &:hover{
+      background-color: pink;
+    }
+  `
+
+  const ButtonShowTracks = styled.button`
+    background-color: transparent;
+    width: 100%;
+    border: none;
+    color: white;
+    text-transform: capitalize;
+    font-weight: bold;
+    text-align: left;
+    font-size: 18px;
+    margin-left: 5px;
+  `
+
+  const DeleteSongButton = styled.button`
+    background-color: red;
+    color: red;
+    width: 4px;
+    border: none;
+    cursor: pointer;
+    transition: 0.7s;
+    &:hover{
+      background-color: pink;
+    }
+  `
+
+
+
+
 
   // State to Playlist
   const [playlist, setPlaylist] = useState([]);
@@ -168,19 +226,20 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <div>
           <h1> Bom dia </h1>
+        <MyPlaylists>
           {playlist.map((eachPlaylist) => {
             return (
-              <div>
-                <DeletePlaylistButton onClick={() => deletePlaylist(eachPlaylist.id)}> X </DeletePlaylistButton>
-                <button onClick={() => {getPlaylistTracks(eachPlaylist.id)}}>
-                  <li key={eachPlaylist.id}>{eachPlaylist.name} </li>
-                </button>
-              </div>
+              <EachPlaylist>
+                <DeletePlaylistButton onClick={() => deletePlaylist(eachPlaylist.id)}/>
+                <ImagePlaylist src={playlistimage}/>
+                <ButtonShowTracks onClick={() => {getPlaylistTracks(eachPlaylist.id)}}>
+                  <p key={eachPlaylist.id}>{eachPlaylist.name} </p>
+                </ButtonShowTracks>
+              </EachPlaylist>
             );
           })}
-        </div>
+        </MyPlaylists>
         <div>
           <h2> Faça suas playlists </h2>
           <input
@@ -222,12 +281,13 @@ function App() {
           <div>
           {contentPlaylist.map((eachSong) => {
             return (
-              <div>
-                <button onClick={() => {deleteSong(eachSong.id)}}> Apagar </button>
-                <li> Nome: {eachSong.name}</li>
-                <li> Artista: {eachSong.artist}</li>
-                <li> URL: {eachSong.url}</li>
-                <iframe width="130" height="90" src={eachSong.url.replace("watch?v=","embed/").concat("?controls=0")} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+              <div style={{color:'white', display:"flex", textAlign:"left", margin:"15px", backgroundColor: "#262626"}}>                 {/* I found a bug in iframe when I use styled-component in that tag! */}
+                <DeleteSongButton onClick={() => {deleteSong(eachSong.id)}}/>
+                <iframe width="130" height="80" src={eachSong.url.replace("watch?v=","embed/").concat("?controls=0")} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  />
+                <ul style={{listStyle:"none"}}>
+                  <li style={{fontWeight:"bold"}}>{eachSong.name}</li>
+                  <li>{eachSong.artist}</li>
+                </ul>
               </div>
             );
             })}
