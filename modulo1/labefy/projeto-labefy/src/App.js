@@ -5,8 +5,38 @@ import axios from "axios";
 import styled from "styled-components";
 
 import playlistimage from "./assets/playlist-image.png"
+import notificationicon from "./assets/notificationicon.svg"
+import settingicon from "./assets/settingicon.svg"
+import timeicon from "./assets/timeicon.svg"
+import LabefyByLuan from "./assets/Labefy-byLuan.svg"
 
 function App() {
+
+  const LogoByLuan = styled.img`
+    height: 115px;
+    margin: 35px 0 20px;
+  `
+
+  const H1 = styled.h1`
+    font-size: 50px;
+    margin-bottom: 50px;
+  `
+
+  const Header = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  `
+
+  const IconGroup = styled.div`
+    display: flex;
+    gap: 15px;
+  `
+
+  const IconsHeader = styled.img`
+    height: 30px;
+  `
+
 
   const MyPlaylists = styled.div`
     display:grid;
@@ -19,11 +49,12 @@ function App() {
     margin: 3px 0;
     display: flex;
     align-items: center;
+    cursor: pointer;
     transition: 0.5s;
-    &:hover{
-      background-color: #323133;
-    }
 
+    &:hover{
+      background-color: #363636;
+    }
   `
 
   const ImagePlaylist = styled.img`
@@ -31,15 +62,14 @@ function App() {
   `
 
   const DeletePlaylistButton = styled.button`
-    background-color: red;
+    background-color: #9B053D;
     color: red;
     width: 4px;
     height: 100%;
     border: none;
-    cursor: pointer;
     transition: 0.5s;
     &:hover{
-      background-color: pink;
+      background-color:red;
     }
   `
 
@@ -53,17 +83,21 @@ function App() {
     text-align: left;
     font-size: 18px;
     margin-left: 5px;
+    cursor: pointer;
   `
 
   const DeleteSongButton = styled.button`
-    background-color: red;
+    background-color:#9B053D;
     color: red;
     width: 4px;
     border: none;
     cursor: pointer;
     transition: 0.7s;
+    position: absolute;
+    right: 0;
+    height: 100%;
     &:hover{
-      background-color: pink;
+      background-color: red;
     }
   `
 
@@ -226,35 +260,47 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-          <h1> Bom dia </h1>
+        <LogoByLuan src={LabefyByLuan} />
+        <Header>
+          <H1> Bom dia </H1>
+          <IconGroup>
+            <IconsHeader src={notificationicon}/>
+            <IconsHeader src={settingicon}/>
+            <IconsHeader src={timeicon}/>
+          </IconGroup>
+        </Header>
         <MyPlaylists>
           {playlist.map((eachPlaylist) => {
             return (
               <EachPlaylist>
-                <DeletePlaylistButton onClick={() => deletePlaylist(eachPlaylist.id)}/>
                 <ImagePlaylist src={playlistimage}/>
                 <ButtonShowTracks onClick={() => {getPlaylistTracks(eachPlaylist.id)}}>
                   <p key={eachPlaylist.id}>{eachPlaylist.name} </p>
                 </ButtonShowTracks>
+                <DeletePlaylistButton onClick={() => deletePlaylist(eachPlaylist.id)}/>
               </EachPlaylist>
             );
           })}
         </MyPlaylists>
         <div>
-          <h2> Faça suas playlists </h2>
+          <h2 class="make Playlist"> Faça suas playlists </h2>
           <input
             placeholder="Nome da Playlist"
             value={inputNewPlaylist}
             onChange={(element) => {
               setInputNewPlaylist(element.target.value);
             }}
+            className="playlistName"
           />
-          <button onClick={createPlaylists}>Criar Playlist</button>
+          <button onClick={createPlaylists}
+            className="btnCreatePlaylist"
+          >Criar Playlist</button>
         </div>
         <div>
-          <h2> Escolhidas por você </h2>
+          <h2 class="choose Playlist"> Escolhidas por você </h2>
           <h3> Adicionar música</h3>
           <input
+            className="musicName"
             placeholder="Nome da Musica"
             value={inputNewSongName}
             onChange={(element) => {
@@ -262,6 +308,7 @@ function App() {
             }}
             />
           <input
+            className="artistName"
             placeholder="Nome do Artista"
             value={inputNewArtist}
             onChange={(element) => {
@@ -274,20 +321,27 @@ function App() {
             onChange={(element) => {
               setInputNewURL(element.target.value);
             }}
+            className="urlLink"
             />
-          <button onClick={() => addSong(idPlaylist)}>Enviar</button>
+          <button onClick={() => addSong(idPlaylist)} className="submitPlaylist">Adicionar à Playlist</button>
           </div>
-          <br/>
+          <br/><br/><br/><br/>
           <div>
           {contentPlaylist.map((eachSong) => {
             return (
-              <div style={{color:'white', display:"flex", textAlign:"left", margin:"15px", backgroundColor: "#262626"}}>                 {/* I found a bug in iframe when I use styled-component in that tag! */}
-                <DeleteSongButton onClick={() => {deleteSong(eachSong.id)}}/>
+              <div style={{color:'white',
+              display:"flex",
+              textAlign:"left",
+              margin:"15px",                                  /* I found a bug in iframe when I use styled-component in that tag! */
+              backgroundColor: "#262626",
+              position: "relative"}}
+              >
                 <iframe width="130" height="80" src={eachSong.url.replace("watch?v=","embed/").concat("?controls=0")} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  />
                 <ul style={{listStyle:"none"}}>
                   <li style={{fontWeight:"bold"}}>{eachSong.name}</li>
                   <li>{eachSong.artist}</li>
                 </ul>
+                <DeleteSongButton onClick={() => {deleteSong(eachSong.id)}}/>
               </div>
             );
             })}

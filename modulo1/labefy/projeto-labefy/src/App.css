@@ -1,5 +1,5 @@
 body {
-  background-color: #ccc;
+  background: linear-gradient(0deg, rgb(2, 2, 2) 0%, rgba(22, 22, 22, 0.973) 100%);
 }
 
 .App {
@@ -13,13 +13,67 @@ body {
 .container {
   border: none;
   border-radius: 5px;
-  background: rgb(6,6,6);
-  background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(22, 22, 22, 0.966) 100%);
+  background: transparent;
   min-width: 800px;
   width: 50%;
   min-height: 100vh;
   margin: auto;
-  padding: 0 70px ;
+  padding: 30px 70px ;
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
   color: white;
+}
+
+
+
+.playlistName,
+.artistName,
+.musicName,
+.urlLink {
+  margin: 20px 0;
+  margin-right: 15px;
+  padding: 12px;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 40px;
+}
+
+.artistName,
+.musicName,
+.urlLink {
+  margin-top: 10px !important;
+}
+
+.btnCreatePlaylist,
+.submitPlaylist {
+  cursor: pointer;
+  padding: 12px;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 40px;
+  color: #000000d7;
+  font-weight: bold;
+  background-color: #1BD05F;
+  transition: .5s;
+}
+
+.submitPlaylist {
+  margin: 20px 0;
+}
+
+.btnCreatePlaylist:hover,
+.submitPlaylist:hover {
+  background-color: #118a3f;
+}
+
+.Playlist {
+  font-size: 30px;
+}
+
+.make {
+  margin-top: 60px;
+}
+
+.choose {
+  margin-top: 50px;
+  margin-bottom: 35px;
 }
