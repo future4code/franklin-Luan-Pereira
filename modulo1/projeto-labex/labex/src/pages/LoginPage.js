@@ -1,6 +1,10 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
+import { goToSignUpPage } from "../routes/cordination";
 
 function LoginPage() {
+  const navigate = useNavigate();
+
   return (
     <div>
         <h1>Meu Login Labex</h1>
@@ -15,7 +19,7 @@ function LoginPage() {
             </div>
             <button>Login</button>
         </form>
-        <button>Criar Conta</button>
+        <button onClick={ () => goToSignUpPage(navigate) }>Criar Conta</button>
 
     </div>
   );
