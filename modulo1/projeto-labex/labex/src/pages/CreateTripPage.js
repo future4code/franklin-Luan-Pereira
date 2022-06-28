@@ -1,6 +1,6 @@
 import React from "react";
 
-function NewTripPage() {
+function CreateTripPage() {
   return (
     <div>
         <h1>Novo Destino Labex</h1>
@@ -27,4 +27,4 @@ function NewTripPage() {
   );
 }
 
-export default NewTripPage;
+export default CreateTripPage;

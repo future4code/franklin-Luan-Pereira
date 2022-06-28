@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
-import { goToSignUpPage } from "../routes/cordination";
+import { goToApplicationFormPage } from "../routes/cordination";
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ function LoginPage() {
             </div>
             <button>Login</button>
         </form>
-        <button onClick={ () => goToSignUpPage(navigate) }>Criar Conta</button>
+        <button onClick={ () => goToApplicationFormPage(navigate) }>Criar Conta</button>
 
     </div>
   );

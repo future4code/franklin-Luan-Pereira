@@ -1,6 +1,6 @@
 import React from "react";
 
-function MyTripDetailsPage() {
+function TripDetailsPage() {
   return (
     <div>
       <h1>Destino</h1>
@@ -21,4 +21,4 @@ function MyTripDetailsPage() {
   );
 }
 
-export default MyTripDetailsPage;
+export default TripDetailsPage;
