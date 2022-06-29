@@ -1,6 +1,6 @@
 export const goToLoginPage = (navigate) => {
   // funcao que utiliza o navigate para ir para outra pagina
-  navigate("/login"); // podemos chamar direto com navigate("/login")
+  navigate("/login"); // podemos chamar direto com navigate("/login")  
 };
 
 export const goToApplicationFormPage = (navigate) => {
@@ -22,3 +22,4 @@ export const goToCreateTripPage = (navigate) => {
 export const goToListTripsPage= (navigate) => {
   navigate("/trips/list");
 };
+

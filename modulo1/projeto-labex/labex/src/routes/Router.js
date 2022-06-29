@@ -10,7 +10,7 @@ import ApplicationFormPage from "../pages/ApplicationFormPage";
 import ErrorPage from "../pages/ErrorPage";
 
 const Router = () => {
-    return(
+    return (
         <BrowserRouter>
         <Routes>
           <Route index element={<HomePage/>} />
