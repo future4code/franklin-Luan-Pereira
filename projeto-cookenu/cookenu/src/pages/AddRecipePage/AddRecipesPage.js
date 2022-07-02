@@ -2,7 +2,8 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function addRecipe() {
+function AddRecipesPage() {
+
     return(
         <div>
             <h1> Adicionar Nova Receita </h1>
@@ -15,4 +16,4 @@ function addRecipe() {
     );
 }
 
-export default addRecipe;
+export default AddRecipesPage;

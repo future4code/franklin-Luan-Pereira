@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function recipeDetails() {
+function RecipeDetailsPage() {
     return(
         <div>
             <img src="###" />
@@ -13,4 +13,4 @@ function recipeDetails() {
     );
 }
 
-export default recipeDetails;
+export default RecipeDetailsPage;

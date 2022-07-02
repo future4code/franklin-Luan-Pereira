@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function recipeFeed() {
+function RecipeListPage() {
     return(
         <div>
             <img src=""/>
@@ -12,4 +12,4 @@ function recipeFeed() {
     );
 }
 
-export default recipeFeed;
+export default RecipeListPage;

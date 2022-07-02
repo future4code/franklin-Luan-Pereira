@@ -2,17 +2,17 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function cadastro() {
+function LoginPage() {
     return(
         <div>
             <img src="###"/>
-            <input placeholder="nome" />
             <input placeholder="email" />
             <input placeholder="senha" />
-            <button>Fazer Cadastro</button>
+            <button>Login</button>
+            <button>Cadastro</button>
         </div>
 
     );
 }
 
-export default cadastro;
+export default LoginPage;
