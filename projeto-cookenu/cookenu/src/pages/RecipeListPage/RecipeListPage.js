@@ -1,8 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useProtectedPage } from "../../hooks/useProtectedPage"
 
 function RecipeListPage() {
+    useProtectedPage()
+    
     return(
         <div>
             <img src=""/>
