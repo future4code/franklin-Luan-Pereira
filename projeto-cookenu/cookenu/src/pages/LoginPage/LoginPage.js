@@ -7,7 +7,7 @@ import {BASE_URL} from "../../constants/urls"
 // import { login } from "../../services/user"                                                   /* Another option -> import login at "services" directory */
 import { useUnprotectedPage } from "../../hooks/useUnprotectedPage"
 
-function LoginPage() {
+function LoginPage({logStatus, setLogStatus}) {
     useUnprotectedPage();
 
     const navigate = useNavigate();
@@ -19,8 +19,6 @@ function LoginPage() {
         // login(form,clear,navigate)                                                                                  // When { login } is imported
     }
 
-
-
     const login = () => {
         axios
             .post(`${BASE_URL}/user/login`, form)                                                        /*  form(body) = email: text@domain.com */
@@ -29,8 +27,9 @@ function LoginPage() {
                 localStorage.setItem("token", response.data.token)                                 /* localStorage -> ("Name",response.local) */
                 clear()
                 goToRecipeList(navigate)
+                setLogStatus("Logout")
             })
-            .catch((error) => alert("erro no login"))
+            .catch((error) => console.log(error))
     }
 
     return(
