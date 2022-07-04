@@ -5,6 +5,9 @@ import { useUnprotectedPage } from "../../hooks/useUnprotectedPage";
 import useForm from "../../hooks/useForm";
 import { BASE_URL } from "../../constants/urls"
 import { goToRecipeList } from "../../routes/coordinator";
+import { ButtonSignUp, Container, ContainerLogo, Form, ImageLogo, Input, InputName } from "./styled";
+
+import LOGO from "../../assets/main-logo.png"
 
 function SignUpPage({logStatus, setLogStatus}) {
     useUnprotectedPage()
@@ -29,10 +32,14 @@ function SignUpPage({logStatus, setLogStatus}) {
     }
 
     return(
-        <div>
-            <img src="###"/>
-            <form onSubmit={onSubmitForm}>
-                <input
+        <Container>
+            <ContainerLogo>
+                <ImageLogo src={LOGO}/>
+            </ContainerLogo>
+            <div style={{backgroundColor: "black", width: "1px", minHeight: "40vh", borderLeftStyle: "faded"}} ></div>
+            <Form onSubmit={onSubmitForm}>
+                <InputName>Nome</InputName>
+                <Input
                     name={"name"}
                     value={form.nome}
                     onChange={onChange}
@@ -40,7 +47,8 @@ function SignUpPage({logStatus, setLogStatus}) {
                     type="text"
                     required
                 />
-                <input
+                <InputName>Email</InputName>
+                <Input
                     name={"email"}
                     value={form.email}
                     onChange={onChange}
@@ -48,8 +56,8 @@ function SignUpPage({logStatus, setLogStatus}) {
                     type="email"
                     required
                 />
-
-                <input
+                <InputName>Senha</InputName>
+                <Input
                     name={"password"}
                     value={form.password}
                     onChange={onChange}
@@ -57,9 +65,9 @@ function SignUpPage({logStatus, setLogStatus}) {
                     type="password"
                     required
                     />
-                <button onClick={signUp}>Fazer Cadastro</button>
-            </form>
-        </div>
+                <ButtonSignUp onClick={signUp}>Fazer Cadastro</ButtonSignUp>
+            </Form>
+        </Container>
 
     );
 }
