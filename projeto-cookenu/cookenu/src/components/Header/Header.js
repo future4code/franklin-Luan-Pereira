@@ -4,6 +4,10 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { goToLogin, goToRecipeList } from "../../routes/coordinator";
 
+import LOGO from "../../assets/main-logo.png"
+
+import { Container, HeaderPage, ButtonLogo, LogoHeader, ButtonStatus  } from "./styled";
+
 const Header = ({logStatus, setLogStatus}) => {
     const token = localStorage.getItem("token")
     const navigate = useNavigate()
@@ -24,18 +28,18 @@ const Header = ({logStatus, setLogStatus}) => {
         }
     }
 
-    const HeaderPage = styled.div`
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 30px;
-    background-color: yellow;
-`
 
     return(
-        <HeaderPage>
-            <button onClick={() => goToRecipeList(navigate)} >Cookenu</button>
-            <button onClick={logStatusAction}>{logStatus}</button>
-        </HeaderPage>
+        <Container>
+            <HeaderPage>
+                <ButtonLogo onClick={() => goToRecipeList(navigate)} >
+                    <LogoHeader src={LOGO} />
+                </ButtonLogo>
+                <ButtonStatus onClick={logStatusAction}>
+                    {logStatus}
+                </ButtonStatus>
+            </HeaderPage>
+        </Container>
     );
 }
 

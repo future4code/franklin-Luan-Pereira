@@ -4,8 +4,13 @@ import { useNavigate } from "react-router-dom";
 import useForm from "../../hooks/useForm";
 import { goToSignUp, goToRecipeList } from "../../routes/coordinator"
 import {BASE_URL} from "../../constants/urls"
+import LOGO from "../../assets/main-logo.png"
+
+
+
 // import { login } from "../../services/user"                                                   /* Another option -> import login at "services" directory */
 import { useUnprotectedPage } from "../../hooks/useUnprotectedPage"
+import { ButtonLogin, ButtonSignUp, Container, ContainerLogo, Form, ImageLogo, Input, InputName } from "./styled";
 
 function LoginPage({logStatus, setLogStatus}) {
     useUnprotectedPage();
@@ -33,10 +38,14 @@ function LoginPage({logStatus, setLogStatus}) {
     }
 
     return(
-        <div>
-            <img src="###"/>
-            <form onSubmit={onSubmitForm}>
-                <input
+        <Container>
+            <ContainerLogo>
+                <ImageLogo src={LOGO}/>
+            </ContainerLogo>
+            <div style={{backgroundColor: "black", width: "1px", minHeight: "40vh", borderLeftStyle: "faded"}} ></div>
+            <Form onSubmit={onSubmitForm}>
+                <InputName>Email</InputName>
+                <Input
                     name={"email"}
                     value={form.email}
                     onChange={onChange}
@@ -44,19 +53,19 @@ function LoginPage({logStatus, setLogStatus}) {
                     type="email"
                     required
                 />
-
-                <input
-                name={"password"}
-                value={form.password}
-                onChange={onChange}
-                label={"senha"}
-                type="password"
-                required
+                <InputName>Senha</InputName>
+                <Input
+                    name={"password"}
+                    value={form.password}
+                    onChange={onChange}
+                    label={"senha"}
+                    type="password"
+                    required
                 />
-                <button onClick={login}>Login</button>
-                <button onClick={() => goToSignUp(navigate)}>Cadastro</button>
-            </form>
-        </div>
+                <ButtonLogin onClick={login}>Login</ButtonLogin>
+                <ButtonSignUp onClick={() => goToSignUp(navigate)}>Cadastro</ButtonSignUp>
+            </Form>
+        </Container>
 
     );
 }
