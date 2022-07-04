@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { BASE_URL } from "../../constants/urls";
 import { useProtectedPage } from "../../hooks/useProtectedPage"
+import { Container, ContainerDescription, ContainerImage, Image } from "./styled";
 
 
 function RecipeDetailsPage() {
@@ -41,14 +42,17 @@ function RecipeDetailsPage() {
     }
 
     return(
-        <div>
-            <br/>
+        <Container>
             <div>
-                <img src={recipe && recipe.image} />
-                <h1> {recipe && recipe.title} </h1>
-                <p> {recipe && recipe.description} </p>
+                <ContainerImage>
+                    <Image src={recipe && recipe.image} />
+                </ContainerImage>
+                <ContainerDescription>
+                    <h1> {recipe && recipe.title} </h1>
+                    <p> {recipe && recipe.description} </p>
+                </ContainerDescription>
             </div>
-        </div>
+        </Container>
 
     );
 }

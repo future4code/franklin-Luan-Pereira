@@ -1,10 +1,14 @@
 import { useState } from "react";
+import LOGO from "../../assets/main-logo.png"
+import { Container, ContainerH1, ImageContainer } from "./styled";
 
 const ErrorPage = () => {
     return(
-        <div>
-           <h1> Página não encontrada </h1>
-        </div>
+        <Container>
+           <ContainerH1> Ops, acho que essa pagina não existe</ContainerH1>
+           <ContainerH1>:(</ContainerH1>
+           <ImageContainer src={LOGO}/>
+        </Container>
     );
 }
 
