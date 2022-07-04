@@ -9,6 +9,7 @@ import { ButtonSignUp, Container, ContainerLogo, Form, ImageLogo, Input, InputNa
 
 import LOGO from "../../assets/main-logo.png"
 
+// Function to Sign Up users at platform
 function SignUpPage({logStatus, setLogStatus}) {
     useUnprotectedPage()
     const navigate = useNavigate()

@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { goToLogin } from "../routes/coordinator"
 
-
+// Function to Protect Page (only access with token)
 export const useProtectedPage = () => {
     const navigate = useNavigate()
 

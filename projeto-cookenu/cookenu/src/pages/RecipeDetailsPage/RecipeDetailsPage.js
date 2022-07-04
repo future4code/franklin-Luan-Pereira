@@ -5,11 +5,11 @@ import { BASE_URL } from "../../constants/urls";
 import { useProtectedPage } from "../../hooks/useProtectedPage"
 import { Container, ContainerDescription, ContainerImage, Image } from "./styled";
 
-
+//Function to show Recipes Details
 function RecipeDetailsPage() {
     useProtectedPage()
-    const params = useParams()      //to get id at URL
-    // console.log(params)              //show param (id)
+    const params = useParams()                                                   //to get id at URL
+    // console.log(params)                                                         //show param (id)
 
     const [recipe, setRecipe] = useState({})
     const url = `${BASE_URL}/recipe/${params.id}`
@@ -31,6 +31,7 @@ function RecipeDetailsPage() {
             })
     }, [url])
 
+    // Container of Recipe Details
     const recipeDetails = () => {
         return(
             <div>

@@ -8,9 +8,11 @@ import { Container, ImageLogo, ContainerLogo, Form, InputName, Input, ButtonAdd 
 
 import LOGO from "../../assets/main-logo.png"
 
+// Function to add new Recipes on BackEnd
 function AddRecipesPage() {
     useProtectedPage()
 
+// Use a Component to aux Form state
     const [form, onChange, clear] = useForm({title: "", description: "",picture: ""})
     console.log(form)
 
@@ -18,7 +20,7 @@ function AddRecipesPage() {
 
     const createRecipe = () => {
         axios
-            .post(url, form,{      // form = body
+            .post(url, form,{                                                       // form = body
                 headers: {
                     Authorization: localStorage.getItem("token")
                 }

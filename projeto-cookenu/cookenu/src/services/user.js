@@ -2,8 +2,8 @@ import axios from "axios"
 
 import { BASE_URL } from "../constants/urls"
 
-
- export const login = (form,clear) => {
+//Function to LogIn Page
+export const login = (form,clear) => {
     axios
         .post(`${BASE_URL}/user/login`, form)     /*  form(body) = email: text@domain.com */
         .then((response) => {                       /* and password: *****  */

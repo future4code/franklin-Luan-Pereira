@@ -2,6 +2,7 @@ import { useState } from "react";
 import LOGO from "../../assets/main-logo.png"
 import { Container, ContainerH1, ImageContainer } from "./styled";
 
+// Function when user access a different page or wrong page
 const ErrorPage = () => {
     return(
         <Container>
