@@ -4,7 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { useProtectedPage } from "../../hooks/useProtectedPage"
 import useForm from "../../hooks/useForm";
 import {BASE_URL} from "../../constants/urls"
+import { Container, ImageLogo, ContainerLogo, Form, InputName, Input, ButtonAdd } from "./styled";
 
+import LOGO from "../../assets/main-logo.png"
 
 function AddRecipesPage() {
     useProtectedPage()
@@ -33,37 +35,42 @@ function AddRecipesPage() {
 
 
     return(
-        <div>
-            <h1> Adicionar Nova Receita </h1>
-            <p> titulo </p>
-            <input
-                    name={"title"}
-                    value={form.title}
-                    onChange={onChange}
-                    label={"titulo"}
-                    type="text"
-                    required
-            />
-            <p> descrição</p>
-            <input
-                    name={"description"}
-                    value={form.description}
-                    onChange={onChange}
-                    label={"titulo"}
-                    type="text"
-                    required
-            />
-            <p> imagem </p>
-            <input
-                    name={"picture"}
-                    value={form.picture}
-                    onChange={onChange}
-                    label={"titulo"}
-                    type="text"
-                    required
-            />
-            <button onClick={createRecipe}>Adicionar</button>
-        </div>
+        <Container>
+            <ContainerLogo>
+                <ImageLogo src={LOGO}/>
+            </ContainerLogo>
+            <div style={{backgroundColor: "black", width: "1px", minHeight: "40vh", borderLeftStyle: "faded"}} ></div>
+            <Form>
+                <InputName> Titulo </InputName>
+                <Input
+                        name={"title"}
+                        value={form.title}
+                        onChange={onChange}
+                        label={"titulo"}
+                        type="text"
+                        required
+                />
+                <InputName> Descrição</InputName>
+                <Input
+                        name={"description"}
+                        value={form.description}
+                        onChange={onChange}
+                        label={"titulo"}
+                        type="text"
+                        required
+                />
+                <InputName> Imagem </InputName>
+                <Input
+                        name={"picture"}
+                        value={form.picture}
+                        onChange={onChange}
+                        label={"titulo"}
+                        type="text"
+                        required
+                />
+                <ButtonAdd onClick={createRecipe}>Adicionar</ButtonAdd>
+            </Form>
+        </Container>
 
     );
 }

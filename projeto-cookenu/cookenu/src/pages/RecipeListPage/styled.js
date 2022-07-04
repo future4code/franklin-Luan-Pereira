@@ -49,7 +49,7 @@ export const ContainerH2 = styled.div`
 export const CardRecipe = styled.div`
     border: 1px ;
     border-radius: px;
-    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
     height: 270px;
     margin-bottom: 30px;
     transition: .3s;
