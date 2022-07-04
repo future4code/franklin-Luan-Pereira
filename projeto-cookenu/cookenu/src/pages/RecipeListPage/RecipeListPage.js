@@ -34,7 +34,6 @@ function RecipeListPage() {
             })
             .catch((error) => {
                 console.log(error)
-                alert("Ocorreu um erro, tente novamente")
             })
     }, [url])
 
