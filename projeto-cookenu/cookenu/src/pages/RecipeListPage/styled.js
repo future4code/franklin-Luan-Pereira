@@ -1,6 +1,48 @@
 import styled from "styled-components";
 
+export const IntroContainer = styled.div`
+    display: flex;
 
+`
+export const IntroDiv = styled.div`
+
+`
+
+export const IntroP = styled.p`
+    font-size: 25px;
+    margin: 10px 0 5px;
+`
+
+export const IntroH1 = styled.h1`
+    font-size: 100px;
+    margin: 0;
+    color: orangered;
+`
+export const IntroButton = styled.button`
+    margin: 65px 0;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 90px;
+    background-color: salmon;
+
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+
+    cursor: pointer;
+    transition: .5s;
+    &:hover{
+        background-color: orangered;
+    }
+`
+
+export const ContainerH2 = styled.div`
+    margin-top: 150px;
+    margin-bottom: 50px;
+    font-size: 25px;
+
+`
 
 // Recipes
 

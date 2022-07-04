@@ -6,7 +6,7 @@ import { BASE_URL } from "../../constants/urls"
 import { goToAddRecipes, goToRecipeDetails } from "../../routes/coordinator"
 
 
-import { CardImage, CardTitle, CardRecipe, RecipeCardList } from "./styled"
+import { IntroContainer, IntroDiv, IntroP, IntroH1, IntroButton,ContainerH2, CardImage, CardTitle, CardRecipe, RecipeCardList } from "./styled"
 import {CardRecipeCategory} from "./CardRecipeCategory"
 import BreakfastICON from "../../assets/CardCategory/breakfast.png"
 import DrinkICON from "../../assets/CardCategory/drink.png"
@@ -56,22 +56,24 @@ function RecipeListPage() {
 
     return(
 
-        <div style={{width:"90vw", margin: "0 auto"} }>
+        <div style={{width:"90vw", margin: "150px auto"} }>
             <div className="Introducao">
+                <IntroContainer>
+                    <IntroDiv>
+                        <IntroP> Bem vindo a nossa Lista de Receitas</IntroP>
+                        <IntroH1> É Tudo Sobre Bom </IntroH1>
+                        <IntroH1>Cheiro & Sabor</IntroH1>
+                        <IntroP> Relaxa! Sua única preocupação vai ser qual prato escolher!</IntroP>
+                        <IntroP>Agora cai pro abraço. </IntroP>
+                        <IntroButton onClick={
+                        () => goToAddRecipes(navigate)
+                        }>
+                        Adicionar Receitas
+                        </IntroButton>
+                    </IntroDiv>
+                </IntroContainer>
                 <div>
-                    <div>
-                        <p> Bem vindo a nossa Lista de Receitas</p>
-                        <h1> É Tudo Sobre Bom </h1>
-                        <h1>Cheiro & Sabor</h1>
-                        <p> Relaxa! Sua única preocupação vai ser qual prato escolher! Agora cai pro abraço. </p>
-                        <button>
-                            Receitas
-                        </button>
-                    </div>
-                    <img src={""} />
-                </div>
-                <div>
-                    <h2> Temos Maravilhosos tipos de Receitas</h2>
+                    <ContainerH2> Temos Maravilhosos tipos de Receitas:</ContainerH2>
                     <div>
                         <div style={{display: "flex", justifyContent: "center", gap: "30px"}}>
                             <CardRecipeCategory categoryIcon={BreakfastICON} title={"Breakfast"}/>
@@ -80,14 +82,10 @@ function RecipeListPage() {
                             <CardRecipeCategory categoryIcon={PastaICON} title={"Massa"}/>
                             <CardRecipeCategory categoryIcon={SweetICON} title={"Doces"}/>
                         </div>
+                        <div style={{width: "90vw", height: "1px", margin: "120px 0", background: "black"}} />
                     </div>
                 </div>
             </div>
-            <button onClick={
-                () => goToAddRecipes(navigate)
-            }>
-            Adicionar Receita
-            </button>
             <RecipeCardList>
                 {recipeList}
             </RecipeCardList>
