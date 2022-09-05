@@ -1,0 +1,29 @@
+{
+  "name": "aula-knex",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev ./src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node build/index.js"
+  },
+  "author": "Labenu",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.6.0",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/knex": "^0.16.1",
+    "@types/node": "^14.14.35",
+    "knex": "^2.2.0",
+    "mysql": "^2.18.1",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.8.2"
+  },
+  "keywords": [],
+  "description": ""
+}
