@@ -17,7 +17,7 @@ function Router() {
                 <Route path="/lotofacil" element={<LotofacilPage />} />
                 <Route path="/lotomania" element={<LotomaniaPage />} />
                 <Route path="/timemania" element={<TimemaniaPage />} />
-                <Route path="/dia-de-sorte" element={<DiadesortePage />} />
+                <Route path="/diadesorte" element={<DiadesortePage />} />
             </Routes>
         </BrowserRouter>
     );

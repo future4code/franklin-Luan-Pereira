@@ -19,5 +19,5 @@ export function goToTimemania(navigate) {
 }
 
 export function goToDiaDeSorte(navigate) {
-    navigate("/dia-de-sorte");
+    navigate("/diadesorte");
 }

@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import StandardPage from "../components/standardPage/StandardPage";
 
 const DiadesortePage = () => {
-    // const navigate = useNavigate();
 
     return(
         <div>

@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { goToDiaDeSorte } from "../../routes/coordinator";
-// import { goToLotofacil } from "../../routes/coordinator";
-// import { goToLotomania } from "../../routes/coordinator";
-// import { goToMegasena } from "../../routes/coordinator";
-// import { goToQuina } from "../../routes/coordinator";
-// import { goToTimemania } from "../../routes/coordinator";
+import { goToDiaDeSorte } from "../../routes/coordinator";
+import { goToLotofacil } from "../../routes/coordinator";
+import { goToLotomania } from "../../routes/coordinator";
+import { goToMegasena } from "../../routes/coordinator";
+import { goToQuina } from "../../routes/coordinator";
+import { goToTimemania } from "../../routes/coordinator";
 
 import { 
     InfoSide,
@@ -19,18 +19,29 @@ import {
     Important,
 } from "./styled";
 
-const StandardPage = () => {
-    // const navigate = useNavigate();
+const StandardPage = ({numerosSorteados}) => {
+    const navigate = useNavigate();
+    const [loteryPage, setLoteryPage] = useState("");
 
+    useEffect(() => {loteryPage === "Dia de sorte" && goToDiaDeSorte(navigate)},[loteryPage])
+    useEffect(() => {loteryPage === "Lotofacil" && goToLotofacil(navigate)},[loteryPage])
+    useEffect(() => {loteryPage === "Lotomania" && goToLotomania(navigate)},[loteryPage])
+    useEffect(() => {loteryPage === "Mega-sena" && goToMegasena(navigate)},[loteryPage])
+    useEffect(() => {loteryPage === "Quina" && goToQuina(navigate)},[loteryPage])
+    useEffect(() => {loteryPage === "Timemania" && goToTimemania(navigate)},[loteryPage])
+    
+    const options = ["Selecione","Mega-sena", "Quina", "Lotofacil", "Lotomania", "Timemania", "Dia de sorte"]
     return(
         <PageResults>
             <h1>PAGINA</h1>
             <InfoSide>
                 <SelectLotery 
-                    name="select" 
-                    // onChange={(event) => setConcursoSelecionado({ value: event.target.value, id: event.target.selectedIndex })}
+                    value={loteryPage}
+                    onChange={(event) => setLoteryPage(event.target.value)}
                 >
-                    {/* {loterias && loterias.map(({ id, nome }) => <option value={nome} key={id} id={id}>{nome}</option>)} */}
+                    {options.map((optionValue) => (
+                        <option value={optionValue}>{optionValue}</option> 
+                    ))}
                 </SelectLotery>
 
                 <NameLotery className='logo'>
