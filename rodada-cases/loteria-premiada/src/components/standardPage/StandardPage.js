@@ -19,7 +19,14 @@ import {
     Important,
 } from "./styled";
 
-const StandardPage = ({numerosSorteados}) => {
+const StandardPage = (
+    {
+        loteryName,
+        loteryId,
+        loteryConcourseId,
+        loteryConcourseDate,
+        loteryConcourseDrawnNumbers,
+    }) => {
     const navigate = useNavigate();
     const [loteryPage, setLoteryPage] = useState("");
 
@@ -46,17 +53,17 @@ const StandardPage = ({numerosSorteados}) => {
 
                 <NameLotery className='logo'>
                     <img src="../public/Logo_Sena.png" alt="logo-sena" />
-                    <p>MegaSena</p>
+                    <p>{loteryName}</p>
                 </NameLotery>
 
                 <InfoLotery className="concourse">
                     <h1>CONCURSO</h1>
                     <NumberLotery className='info'>
-                        <span className='number'>171</span>
+                        <span className='number'>{loteryConcourseId}</span>
                         <span>
                             -
                         </span>
-                        <span className='date'>07/04/2020</span>
+                        <span className='date'>{loteryConcourseDate}</span>
                     </NumberLotery>
 
                 </InfoLotery>
@@ -64,12 +71,14 @@ const StandardPage = ({numerosSorteados}) => {
 
             <LotteryDrawSide>
                 <DrawnNumbers>
-                    <span className='number'>24</span>
-                    <span className='number'>71</span>
-                    <span className='number'>69</span>
-                    <span className='number'>22</span>
-                    <span className='number'>51</span>
-                    <span className='number'>00</span>
+                    {loteryConcourseDrawnNumbers.map((item) => {
+                        return (
+                            <div>
+                                <span className='number'>{item}</span>
+                            </div>
+                        )
+                    })}
+                    
                 </DrawnNumbers>
                 <Important>
                     Este sorteio é meramente ilustrativo e não possui nenhuma ligação com a CAIXA.

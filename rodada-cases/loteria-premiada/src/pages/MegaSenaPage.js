@@ -8,43 +8,87 @@ const MegasenaPage = () => {
     
     const [loteryName, setLoteryName] = useState("")
     const [loteryId, setLoteryId] = useState(0)
-    const [loteryConcourse, setLoteryConcourse] = useState("")
+    const [loteryConcourseId, setLoteryConcourseId] = useState("")
+    const [loteryConcourseDate, setLoteryConcourseDate] = useState("")
+    const [loteryConcourseDrawnNumbers, setLoteryConcourseDrawnNumbers] = useState([])
 
-    const url = `${BASE_URL}/loterias`
 
+
+    const urlLoterias = `${BASE_URL}/loterias`
+    const urlLoteriasConcurso = `${BASE_URL}/loterias-concursos`
+    const urlNumerosSorteados = `${BASE_URL}/concursos/${loteryConcourseId}`
+    /**
+     * Requisicao para pegar o Id da Loteria 
+     */
     useEffect(() => {
         axios
-            .get(url)
+            .get(urlLoterias)
             .then((response) => {
-                setLoteryName(response.data[0].nome)
-                setLoteryId(response.data[0].id)
+                let responseArray = response.data
+                let responseResult = responseArray.find(item => item.nome === "mega-sena")
+                setLoteryName(responseResult.nome)
+                setLoteryId(responseResult.id)
+                console.log("response.data.Loterias")
+                console.log(response.data)
                 console.log("loteryName:")
-                console.log(response.data[0].nome)
+                console.log(loteryName)
                 console.log("loteryId:")
-                console.log(response.data[0].id)
+                console.log(loteryId)
             })
             .catch((error) => {
                 console.log(error)
             })
     }, [])
-
-    // useEffect(() => {
-    //     axios
-    //         .get(url)
-    //         .then((response) => {
-    //             setLoteryConcourse(response.data.concursoId)
-    //             console.log("concourseId:")
-    //             console.log(response.data.concursoId)
-    //         })
-    //         .catch((error) => {
-    //             console.log(error)
-    //         })
-    // }, [])
+    /**
+     * Requisicao para pegar o Id do Concurso que vai mostrar os numeros sorteados
+     */
+    useEffect(() => {
+        axios
+            .get(urlLoteriasConcurso)
+            .then((response) => {
+                let loteryArray = response.data;
+                console.log("response.data")
+                console.log(response.data)
+                let result = loteryArray.find(item => item.loteriaId === loteryId)
+                setLoteryConcourseId(result.concursoId)
+                console.log("result:")
+                console.log(result)
+                console.log("id do Concurso:")
+                console.log(loteryConcourseId)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }, [loteryId])
+    /**
+     * Requisicao para Numeros Sorteados e Datas
+     */
+    useEffect(() => {
+        axios
+            .get(urlNumerosSorteados)
+            .then((response) => {
+                setLoteryConcourseDate(response.data.data)
+                console.log("LoteryConcourseDate")
+                console.log(loteryConcourseDate)
+                setLoteryConcourseDrawnNumbers(response.data.numeros)
+                console.log("LoteryDrawnNumbers")
+                console.log(loteryConcourseDrawnNumbers)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }, [loteryConcourseId])
 
     return(
         <div>
             <h1>MegaSena</h1>
-            <StandardPage />
+            <StandardPage 
+             loteryName = {loteryName}
+             loteryId = {loteryId}
+             loteryConcourseId = {loteryConcourseId}
+             loteryConcourseDate = {loteryConcourseDate}
+             loteryConcourseDrawnNumbers = {loteryConcourseDrawnNumbers}
+            />
         </div>
     )
 };
