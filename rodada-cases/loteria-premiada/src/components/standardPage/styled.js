@@ -21,7 +21,7 @@ export const InfoSide = styled.div`
 `
 
 export const SelectLotery = styled.select`
-    padding: 0.5rem 5rem;
+    padding: 0.5rem 3rem 0.5rem 5rem;
     text-transform: uppercase;
     border: none;
     border-radius: 5px;
@@ -64,14 +64,21 @@ export const NumberLotery = styled.div`
     color: white;
     flex-direction: row;
     font-size: 1.5rem;
+    min-width: 354px;
 `
 
 export const LotteryDrawSide = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     padding: 0 2rem;
+    border-radius: 50% 50% 0% 0%/ 15%;
+    background-color: #EFEFEF;
+
+    @media (min-width: 1024px) {
+        border-radius: 12% 0% 0% 12%/ 50% 0% 0% 50%;
+    }
 `
 
 export const DrawnNumbers = styled.div`
@@ -80,7 +87,7 @@ export const DrawnNumbers = styled.div`
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    background-color: #efefef;
+    background-color: transparent;
 
     @media (min-width: 1024px) {
         align-items: center;

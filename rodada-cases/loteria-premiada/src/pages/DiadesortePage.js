@@ -83,7 +83,8 @@ const DiadesortePage = () => {
             marginInline: "auto",
             height: "100vh",
             maxWidth: "2000px",
-            marginInline: "auto"
+            marginInline: "auto",
+            backgroundColor: "#BFAF83"
         }}>
             <StandardPage 
              loteryName = {loteryName}

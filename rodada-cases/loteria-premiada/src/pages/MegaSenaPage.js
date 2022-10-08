@@ -84,7 +84,8 @@ const MegasenaPage = () => {
             marginInline: "auto",
             height: "100vh",
             maxWidth: "2000px",
-            marginInline: "auto"
+            marginInline: "auto",
+            backgroundColor: "#6BEFA3"
         }}>
             <StandardPage 
              loteryName = {loteryName}

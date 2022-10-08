@@ -84,7 +84,8 @@ const QuinaPage = () => {
             marginInline: "auto",
             height: "100vh",
             maxWidth: "2000px",
-            marginInline: "auto"
+            marginInline: "auto",
+            backgroundColor: "#8666EF"
         }}>
             <StandardPage 
              loteryName = {loteryName}

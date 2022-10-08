@@ -83,7 +83,8 @@ const LotomaniaPage = () => {
             marginInline: "auto",
             height: "100vh",
             maxWidth: "2000px",
-            marginInline: "auto"
+            marginInline: "auto",
+            backgroundColor: "#FFAB64"
         }}>
             <StandardPage 
              loteryName = {loteryName}

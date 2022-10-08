@@ -83,7 +83,8 @@ const TimemaniaPage = () => {
             marginInline: "auto",
             height: "100vh",
             maxWidth: "2000px",
-            marginInline: "auto"
+            marginInline: "auto",
+            backgroundColor: "#5AAD7D"
         }}>
             <StandardPage 
              loteryName = {loteryName}

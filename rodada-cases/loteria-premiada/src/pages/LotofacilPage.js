@@ -83,7 +83,8 @@ const LotofacilPage = () => {
             marginInline: "auto",
             height: "100vh",
             maxWidth: "2000px",
-            marginInline: "auto"
+            marginInline: "auto",
+            backgroundColor: "#DD7AC6"
         }}>
             <StandardPage 
              loteryName = {loteryName}
