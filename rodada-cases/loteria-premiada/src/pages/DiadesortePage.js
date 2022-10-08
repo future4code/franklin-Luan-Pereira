@@ -79,10 +79,12 @@ const DiadesortePage = () => {
     }, [loteryConcourseId])
 
     return(
-        <div>
-            <h1>
-                Dia de Sorte
-            </h1>
+        <div style={{
+            marginInline: "auto",
+            height: "100vh",
+            maxWidth: "2000px",
+            marginInline: "auto"
+        }}>
             <StandardPage 
              loteryName = {loteryName}
              loteryId = {loteryId}

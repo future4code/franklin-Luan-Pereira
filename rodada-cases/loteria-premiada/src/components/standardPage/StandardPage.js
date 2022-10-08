@@ -40,9 +40,8 @@ const StandardPage = (
     const options = ["Selecione","Mega-sena", "Quina", "Lotofacil", "Lotomania", "Timemania", "Dia de sorte"]
     return(
         <PageResults>
-            <h1>PAGINA</h1>
             <InfoSide>
-                <SelectLotery 
+                <SelectLotery
                     value={loteryPage}
                     onChange={(event) => setLoteryPage(event.target.value)}
                 >

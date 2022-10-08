@@ -80,8 +80,12 @@ const MegasenaPage = () => {
     }, [loteryConcourseId])
 
     return(
-        <div>
-            <h1>MegaSena</h1>
+        <div style={{
+            marginInline: "auto",
+            height: "100vh",
+            maxWidth: "2000px",
+            marginInline: "auto"
+        }}>
             <StandardPage 
              loteryName = {loteryName}
              loteryId = {loteryId}
