@@ -91,6 +91,7 @@ const DiadesortePage = () => {
              loteryConcourseId = {loteryConcourseId}
              loteryConcourseDate = {loteryConcourseDate}
              loteryConcourseDrawnNumbers = {loteryConcourseDrawnNumbers}
+             backgroundColor = "#BFAF83"
             />
         </div>
     )

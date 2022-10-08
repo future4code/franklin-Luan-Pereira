@@ -91,6 +91,7 @@ const TimemaniaPage = () => {
              loteryConcourseId = {loteryConcourseId}
              loteryConcourseDate = {loteryConcourseDate}
              loteryConcourseDrawnNumbers = {loteryConcourseDrawnNumbers}
+             backgroundColor = "#5AAD7D"
             />
         </div>
     )

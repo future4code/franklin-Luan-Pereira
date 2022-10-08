@@ -92,6 +92,7 @@ const QuinaPage = () => {
              loteryConcourseId = {loteryConcourseId}
              loteryConcourseDate = {loteryConcourseDate}
              loteryConcourseDrawnNumbers = {loteryConcourseDrawnNumbers}
+             backgroundColor = "#8666EF"
             />
         </div>
     )

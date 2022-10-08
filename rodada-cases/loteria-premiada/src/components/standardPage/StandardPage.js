@@ -6,6 +6,7 @@ import { goToLotomania } from "../../routes/coordinator";
 import { goToMegasena } from "../../routes/coordinator";
 import { goToQuina } from "../../routes/coordinator";
 import { goToTimemania } from "../../routes/coordinator";
+import LOGO from "../../assets/LOGO.png";
 
 import { 
     InfoSide,
@@ -26,6 +27,7 @@ const StandardPage = (
         loteryConcourseId,
         loteryConcourseDate,
         loteryConcourseDrawnNumbers,
+        backgroundColor,
     }) => {
     const navigate = useNavigate();
     const [loteryPage, setLoteryPage] = useState("");
@@ -40,7 +42,9 @@ const StandardPage = (
     const options = ["Selecione","Mega-sena", "Quina", "Lotofacil", "Lotomania", "Timemania", "Dia de sorte"]
     return(
         <PageResults>
-            <InfoSide>
+            <InfoSide
+                backgroundColor={backgroundColor}
+            >
                 <SelectLotery
                     value={loteryPage}
                     onChange={(event) => setLoteryPage(event.target.value)}
@@ -51,7 +55,7 @@ const StandardPage = (
                 </SelectLotery>
 
                 <NameLotery className='logo'>
-                    <img src="../public/Logo_Sena.png" alt="logo-sena" />
+                    <img src={LOGO} alt="logo-loteria" />
                     <p>{loteryName}</p>
                 </NameLotery>
 

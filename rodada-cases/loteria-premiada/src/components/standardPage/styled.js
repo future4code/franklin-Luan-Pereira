@@ -11,9 +11,9 @@ export const PageResults = styled.div`
 `
 
 export const InfoSide = styled.div`
-    background-color: #6befa3;
+    background-color: ${(props) => (props.backgroundColor ? props.backgroundColor : "white")};
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
     padding: 2rem;
@@ -96,7 +96,7 @@ export const DrawnNumbers = styled.div`
         border-radius: 50%;
         font-weight: bold;
         font-size: 1.7rem;
-        
+
         @media (min-width: 1024px) {
           height: 5rem;
           width: 5rem;

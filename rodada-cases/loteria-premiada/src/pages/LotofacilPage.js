@@ -91,6 +91,7 @@ const LotofacilPage = () => {
              loteryConcourseId = {loteryConcourseId}
              loteryConcourseDate = {loteryConcourseDate}
              loteryConcourseDrawnNumbers = {loteryConcourseDrawnNumbers}
+             backgroundColor = "#DD7AC6"
             />
         </div>
     )

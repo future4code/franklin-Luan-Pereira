@@ -92,6 +92,7 @@ const MegasenaPage = () => {
              loteryConcourseId = {loteryConcourseId}
              loteryConcourseDate = {loteryConcourseDate}
              loteryConcourseDrawnNumbers = {loteryConcourseDrawnNumbers}
+             backgroundColor = "#6BEFA3"
             />
         </div>
     )
