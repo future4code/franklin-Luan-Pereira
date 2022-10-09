@@ -40,6 +40,12 @@ const StandardPage = (
     useEffect(() => {loteryPage === "Timemania" && goToTimemania(navigate)},[loteryPage])
     
     const options = ["Selecione","Mega-sena", "Quina", "Lotofacil", "Lotomania", "Timemania", "Dia de sorte"]
+
+    let dateConcourse = loteryConcourseDate.slice(0,10).split('-')
+    console.log(dateConcourse)
+    dateConcourse = `${dateConcourse[2]}/${dateConcourse[1]}/${dateConcourse[0]}`
+    console.log(dateConcourse)
+
     return(
         <PageResults>
             <InfoSide
@@ -60,13 +66,9 @@ const StandardPage = (
                 </NameLotery>
 
                 <InfoLotery className="concourse">
-                    <h1>CONCURSO</h1>
                     <NumberLotery className='info'>
-                        <span className='number'>{loteryConcourseId}</span>
-                        <span>
-                            -
-                        </span>
-                        <span className='date'>{loteryConcourseDate}</span>
+                        <p>CONCURSO</p>
+                        <span className='number'>{loteryConcourseId} - {dateConcourse}</span>
                     </NumberLotery>
 
                 </InfoLotery>

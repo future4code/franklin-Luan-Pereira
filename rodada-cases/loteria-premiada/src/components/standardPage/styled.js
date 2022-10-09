@@ -56,15 +56,21 @@ export const InfoLotery = styled.div`
         font-weight: 200;
         margin: 0;
         margin-bottom: 0.5rem;
+        
+        @media (min-width: 1024px) {
+            display: flex;
+        }
     }
 `
 
 export const NumberLotery = styled.div`
-    display: flex;
     color: white;
     flex-direction: row;
-    font-size: 1.5rem;
-    min-width: 354px;
+    font-size: 1.2rem;
+
+    @media (min-width: 1024px) {
+        /* display: flex; */
+    }
 `
 
 export const LotteryDrawSide = styled.div`
