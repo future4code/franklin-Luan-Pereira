@@ -13,14 +13,15 @@ export const PageResults = styled.div`
 export const InfoSide = styled.div`
     background-color: ${(props) => (props.backgroundColor ? props.backgroundColor : "white")};
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: left;
     flex-direction: column;
     padding: 2rem;
     gap: 2rem;
 
     @media (min-width: 1024px) {
         padding-left: 100px;
+        align-items: left;
     }
 
 `
@@ -59,7 +60,6 @@ export const NameLotery = styled.div`
 
 export const InfoLotery = styled.div`
     @media (min-width: 1024px) {
-
         display: flex;
         text-align: left;
     }
