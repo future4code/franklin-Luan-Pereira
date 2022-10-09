@@ -14,17 +14,24 @@ export const InfoSide = styled.div`
     background-color: ${(props) => (props.backgroundColor ? props.backgroundColor : "white")};
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: left;
     flex-direction: column;
     padding: 2rem;
     gap: 2rem;
+
+    @media (min-width: 1024px) {
+        padding-left: 100px;
+    }
+
 `
 
 export const SelectLotery = styled.select`
-    padding: 0.5rem 3rem 0.5rem 5rem;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    text-align: center;
     text-transform: uppercase;
     border: none;
     border-radius: 5px;
+    width: 200px;
     &:focus {
         outline: none;
     }
@@ -46,10 +53,16 @@ export const NameLotery = styled.div`
         font-weight: bold;
         text-transform: uppercase;
         color: white;
+        white-space: nowrap;
     }
 `
 
 export const InfoLotery = styled.div`
+    @media (min-width: 1024px) {
+
+        display: flex;
+        text-align: left;
+    }
     h1 {
         color: white;
         font-size: 0.8rem;
@@ -58,7 +71,7 @@ export const InfoLotery = styled.div`
         margin-bottom: 0.5rem;
         
         @media (min-width: 1024px) {
-            display: flex;
+            /* display: flex; */
         }
     }
 `
