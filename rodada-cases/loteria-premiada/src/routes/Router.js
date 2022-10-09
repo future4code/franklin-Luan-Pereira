@@ -8,6 +8,9 @@ import TimemaniaPage from "../pages/TimemaniaPage";
 import DiadesortePage from "../pages/DiadesortePage";
 
 function Router() {
+    /**
+     * Rotas com caminhos definidos para cada componente
+     */
     return (
         <BrowserRouter>
             <Routes>

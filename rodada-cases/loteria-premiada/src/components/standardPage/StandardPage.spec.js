@@ -3,6 +3,9 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import StandardPage from "./StandardPage";
 
+/**
+ * Cada teste deste esta simulando o resultado de cada pagina escolhida pelo usuario
+ */
 describe("StandardPage",() => {
     const renderStandardPage = () => {
         render(

@@ -32,6 +32,7 @@ const StandardPage = (
     const navigate = useNavigate();
     const [loteryPage, setLoteryPage] = useState("");
 
+    // useEffect usado para renderizar a pagina do sorteio escolhido pelo usuario, com a variavel de controle sendo o loteryPage
     useEffect(() => {loteryPage === "Dia de sorte" && goToDiaDeSorte(navigate)},[loteryPage])
     useEffect(() => {loteryPage === "Lotofacil" && goToLotofacil(navigate)},[loteryPage])
     useEffect(() => {loteryPage === "Lotomania" && goToLotomania(navigate)},[loteryPage])
@@ -39,8 +40,10 @@ const StandardPage = (
     useEffect(() => {loteryPage === "Quina" && goToQuina(navigate)},[loteryPage])
     useEffect(() => {loteryPage === "Timemania" && goToTimemania(navigate)},[loteryPage])
     
+    // Array de options para serem renderizadas no select
     const options = ["Selecione","Mega-sena", "Quina", "Lotofacil", "Lotomania", "Timemania", "Dia de sorte"]
-
+    
+    // Aqui estamos transformando a data recebida no retorno da API
     let dateConcourse = loteryConcourseDate.slice(0,10).split('-')
     console.log(dateConcourse)
     dateConcourse = `${dateConcourse[2]}/${dateConcourse[1]}/${dateConcourse[0]}`
