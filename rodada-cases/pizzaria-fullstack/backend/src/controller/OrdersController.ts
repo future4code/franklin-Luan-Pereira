@@ -1,13 +1,13 @@
 import { Request, Response } from "express";
-import PizzaDatabase from "../database/PizzaDatabase";
+import OrdersDatabase from "../database/OrdersDatabase";
 
 
-export default class PizzaController {
-    // constructor (protected PizzaDatabase: PizzaDatabase) {}    
-    public getPizza = async (req:Request, res:Response) => {
+export default class OrdersController {
+    // constructor (protected OrdersDatabase: OrdersDatabase) {}    
+    public getOrders = async (req:Request, res:Response) => {
         try {
 
-            const response = await PizzaDatabase.index();
+            const response = await OrdersDatabase.index();
             // console.log(response)
             res.status(200).send(response);
 
