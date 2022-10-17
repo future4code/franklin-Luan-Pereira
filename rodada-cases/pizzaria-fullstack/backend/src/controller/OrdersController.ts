@@ -13,10 +13,10 @@ export default class OrdersController {
 
         } catch(error: unknown) {
             if (error instanceof Error) {
-                return res.status(400).send({ message: error.message })
-            }
-
-            res.status(500).send({ message: "Erro inesperado"})
+                console.error(error.message);
+                return res.status(400).send({ message: error.message });
+              }
+              res.status(500).send({ message: 'Erro inesperado' });
         }
     }
 }

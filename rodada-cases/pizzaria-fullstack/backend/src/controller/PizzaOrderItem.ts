@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import OrderItemBusiness from "../business/OrderItemBusiness";
 import OrderItemDatabase from "../database/OrderItemDatabase";
 
 
@@ -7,17 +8,18 @@ export default class PizzaOrderItemController {
     public getOrderItem = async (req:Request, res:Response) => {
         try {
             const id = req.params.id;
+            const orderitembusiness = new OrderItemBusiness();
+            const response = await orderitembusiness.getOrderItem(id);
 
-            const response = await OrderItemDatabase.index(id);
             // console.log(response)
             res.status(200).send(response);
 
         } catch(error: unknown) {
             if (error instanceof Error) {
-                return res.status(400).send({ message: error.message })
-            }
-
-            res.status(500).send({ message: "Erro inesperado"})
+                console.error(error.message);
+                return res.status(400).send({ message: error.message });
+              }
+              res.status(500).send({ message: 'Erro inesperado' });
         }
     }
 }

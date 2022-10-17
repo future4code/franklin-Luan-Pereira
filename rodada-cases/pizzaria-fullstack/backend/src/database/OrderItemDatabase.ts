@@ -2,7 +2,7 @@ import { BaseDatabase } from "./BaseDatabase";
 
 
 export default class OrderItemDatabase extends BaseDatabase {
-    static index = async (id:string) => {
+    public getOrderItem = async (id:string) => {
         // SELECT Pizza_order_item.id, Pizza_order_item.quantity, Pizza.name, Pizza.price, Pizza.ingredients from Pizza_order_item
         // JOIN Pizza
         // ON Pizza_order_item.id_pizza = Pizza.id;
