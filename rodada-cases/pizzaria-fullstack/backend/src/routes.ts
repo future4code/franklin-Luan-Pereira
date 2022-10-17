@@ -4,23 +4,15 @@ import PizzaController from "./controller/PizzaController";
  
 const pizza = new PizzaController;
 
-
-// const app: Express = express();
-// app.use(express.json());
-// app.use(cors());
 const routes = express.Router()
 routes.get("/",(req:Request, res:Response) => {
-    res.send("Luan de bequi")
+    res.send("teste backend")
 })
 // list of pizzas
 routes.get("/api/pizzas", pizza.getPizza)
 // list of orders
 routes.get("/api/orders", )
 // details of an individual order
-routes.get("/api/orders/:id")
- 
-// app.listen(3003, () => {
-//  console.log("Servidor rodando na porta 3003");
-// });
+routes.get("/api/orders/:id", )
 
 export default routes;
