@@ -10,7 +10,7 @@ import { goToPizzaPage, goToOrdersPage, goToOrdersIdPage } from "../../routes/co
 const MainPage = () => {
     const navigate = useNavigate();
 
-    const [ orderNumber, setOrderNumber ] = useState("") 
+    const [ orderNumber, setOrderNumber ] = useState(null) 
     
     return(
         <div>
@@ -24,10 +24,16 @@ const MainPage = () => {
                 <p>Selecione o pedido:</p>
                 <input 
                 value={orderNumber}
-                onChange={(order) => setOrderNumber(order.target.value)}
+                onChange={(order) =>{
+                    setOrderNumber(order.target.value)
+                    console.log(orderNumber)
+                }}
                 />
                 <button
-                onClick={(orderNumber)=>goToOrdersIdPage(navigate, orderNumber)}
+                onClick={()=>{
+                    goToOrdersIdPage(navigate, orderNumber);
+                    console.log(`orderNumber: ${orderNumber}`);
+                }}
                 > 
                     Pedidos por Numero 
                 </button>

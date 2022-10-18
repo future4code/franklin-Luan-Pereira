@@ -19,6 +19,7 @@ const OrderIdPage = () => {
             })
             .catch((error) => {
                 console.log(error)
+                alert("Erro ao encontrar Pedido")
             })
     }, [])
 
@@ -30,7 +31,6 @@ const OrderIdPage = () => {
             <p>nome: {orders.name}</p>
             <p>valor: {orders.price}</p>
             <p>ingredientes: {orders.ingredients}</p>
-
         </div>
     )
 }
