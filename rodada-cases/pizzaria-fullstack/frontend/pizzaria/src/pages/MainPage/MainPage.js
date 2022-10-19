@@ -8,12 +8,6 @@ import React, { useState } from "react";
  */
 // import { BASE_URL } from "../../constants/url";
 
-/**
- * Pages
- */
-// import PizzasPage from "../PizzasPage/PizzasPage";
-// import OrdersPage from "../OrdersPage/OrdersPage";
-// import OrderIdPage from "../OrderIdPage/OrderIdPage";
 
 /**
  * Routes

@@ -41,6 +41,7 @@ export const PizzaFlavorsButton = styled.button`
     border-radius: 20px;
     border: none;
     background-color: red;
+    color: white;
     margin-bottom: 28px;
 
     font-size: 20px;
@@ -79,6 +80,7 @@ export const ButtonOrder = styled.button`
     width: 100%;
     border-radius: 20px;
     background-color: red;
+    color: white;
     margin-bottom: 28px;
     border: none;
     cursor: pointer;
@@ -102,6 +104,7 @@ export const ButtonAllOrders = styled.button`
     width: 100%;
     border-radius: 20px;
     background-color: red;
+    color: white;
     margin-bottom: 8px;
     border: none;
     cursor: pointer;

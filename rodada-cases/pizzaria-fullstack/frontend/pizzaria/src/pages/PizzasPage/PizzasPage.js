@@ -1,6 +1,33 @@
+/**
+ * States
+ */
 import React, { useEffect, useState } from "react";
+/**
+ * Constants
+ */
 import { BASE_URL } from "../../constants/url";
+/**
+ * Routes
+ */
 import axios from "axios";
+/**
+ * Styles
+ */
+
+ import { 
+     CardFlavor,
+    Cards,
+    Container,
+    ImageHeader,
+    PizzaIngredients,
+    PizzaName,
+    PizzaPrice,
+} from "./styled";
+/**
+ * Assets
+*/
+import PizasHeader from '../../assets/PizzasHeader.png'
+
 
 const PizzasPage = () => {
     const url = `${BASE_URL}/pizzas`
@@ -20,19 +47,20 @@ const PizzasPage = () => {
     },[])
 
     return(
-        <div>
-            <h1>PIZZAS PAGE</h1>
-            {pizza.map((eachPizza) => {
-                return(
-                    <div>
-                        {/* <img src= /> */}
-                        <h1> {eachPizza.name} </h1>
-                        <p> valor: {eachPizza.price} </p>
-                        <p> {eachPizza.ingredients} </p>
-                    </div>
+        <Container>
+            <ImageHeader src={PizasHeader} />
+            <Cards>
+                {pizza.map((eachPizza) => {
+                    return(
+                        <CardFlavor>
+                            <PizzaName> {eachPizza.name} </PizzaName>
+                            <PizzaIngredients> {eachPizza.ingredients} </PizzaIngredients>
+                            <PizzaPrice> a partir de $ {eachPizza.price} </PizzaPrice>
+                        </CardFlavor>
+                    )}
                 )}
-            )}
-        </div>
+            </Cards>
+        </Container>
     )
 }
 
