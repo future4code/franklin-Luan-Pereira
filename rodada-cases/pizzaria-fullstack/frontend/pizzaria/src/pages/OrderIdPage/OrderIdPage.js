@@ -18,11 +18,13 @@ import axios from "axios";
      CardFlavor,
    Container,
    ImageHeader,
+   OrderNumber,
    PizzaIngredients,
    PizzaName,
    PizzaPrice,
+   PizzaQtd,
 } from "./styled";
-/**
+/** 
  * Assets
 */
 import PedidoIdHeader from '../../assets/PedidoIdHeader.png'
@@ -51,11 +53,11 @@ const OrderIdPage = () => {
         <Container>
             <ImageHeader src={PedidoIdHeader} />
             <CardFlavor>
-                <p>Pedido: {orders.id}</p>
+                <OrderNumber>Pedido: {orders.id}</OrderNumber>
                 <PizzaName>{orders.name}</PizzaName>
                 <PizzaIngredients>{orders.ingredients}</PizzaIngredients>
                 <PizzaPrice>A partir de $ {orders.price}</PizzaPrice>
-                <p>Qtd: {orders.quantity}</p>
+                <PizzaQtd>Qtd: {orders.quantity}</PizzaQtd>
             </CardFlavor>
         </Container>
     )

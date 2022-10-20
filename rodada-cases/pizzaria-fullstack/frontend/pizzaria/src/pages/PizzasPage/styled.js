@@ -28,14 +28,16 @@ export const CardFlavor = styled.div`
     flex-direction: column;
     flex-wrap: wrap;
     align-content: space-between;
-    width: 40%;
+    width: 90%;
     margin-bottom: 10px;
+    box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.15);
+    padding: 15px;
     /* border: 1px solid black; */
 `
 
 
 export const PizzaName = styled.p`
-    font-size: 30px;
+    font-size: 40px;
     color: red;
     font-weight: bold;
     text-shadow: darkgray;
@@ -49,4 +51,5 @@ export const PizzaIngredients = styled.p`
 
 export const PizzaPrice = styled.p`
     margin: 0;
+    font-weight: 600;
 `

@@ -40,7 +40,7 @@ export const PizzaFlavorsButton = styled.button`
     width: 100%;
     border-radius: 20px;
     border: none;
-    background-color: red;
+    background-color: #c73146;
     color: white;
     margin-bottom: 28px;
 
@@ -49,11 +49,10 @@ export const PizzaFlavorsButton = styled.button`
     text-transform: uppercase;
     cursor: pointer;
 
-    transition: .5s;
+    transition: .35s;
     &:hover{
-        background-color: transparent;
-        color: red;
-        scale: calc(1.2);
+        background-color: whitesmoke;
+        color: #c73146;
     }
 
 `
@@ -79,7 +78,7 @@ export const ButtonOrder = styled.button`
     padding: 12px 30%;
     width: 100%;
     border-radius: 20px;
-    background-color: red;
+    background-color: #c73146;
     color: white;
     margin-bottom: 28px;
     border: none;
@@ -90,11 +89,10 @@ export const ButtonOrder = styled.button`
     font-weight: bold;
     text-transform: uppercase;
 
-    transition: .5s;
+    transition: .35s;
     &:hover{
-        background-color: transparent;
-        color: red;
-        scale: calc(1.2);
+        background-color: whitesmoke;
+        color: #c73146;
     }
     
 `
@@ -103,7 +101,7 @@ export const ButtonAllOrders = styled.button`
     padding: 12px 30%;
     width: 100%;
     border-radius: 20px;
-    background-color: red;
+    background-color: #c73146;
     color: white;
     margin-bottom: 8px;
     border: none;
@@ -114,11 +112,10 @@ export const ButtonAllOrders = styled.button`
     font-weight: bold;
     text-transform: uppercase;
 
-    transition: .5s;
+    transition: .35s;
     &:hover{
-        background-color: transparent;
-        color: red;
-        scale: calc(1.2);
+        background-color: whitesmoke;
+        color: #c73146;
     }
 
 `

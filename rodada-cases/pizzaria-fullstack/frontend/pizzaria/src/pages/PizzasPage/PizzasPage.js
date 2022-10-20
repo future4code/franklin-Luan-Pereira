@@ -55,7 +55,7 @@ const PizzasPage = () => {
                         <CardFlavor>
                             <PizzaName> {eachPizza.name} </PizzaName>
                             <PizzaIngredients> {eachPizza.ingredients} </PizzaIngredients>
-                            <PizzaPrice> a partir de $ {eachPizza.price} </PizzaPrice>
+                            <PizzaPrice> a partir de R${eachPizza.price} </PizzaPrice>
                         </CardFlavor>
                     )}
                 )}

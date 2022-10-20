@@ -27,6 +27,6 @@ export const Order = styled.p`
     font-size: 30px;
     font-weight: bold;
     text-transform: capitalize;
-    border-bottom: .5px solid black;
+    border-bottom: .5px solid red;
 `
 
