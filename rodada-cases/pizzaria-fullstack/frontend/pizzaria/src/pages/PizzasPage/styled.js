@@ -16,10 +16,11 @@ export const ImageHeader = styled.img`
 `
 export const Cards = styled.div`
     margin-top: 50px;
-    display: flex;
+    margin-left: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    justify-content: center;
-    align-content: space-between;
+    gap: 20px;
 `
 
 export const CardFlavor = styled.div`
