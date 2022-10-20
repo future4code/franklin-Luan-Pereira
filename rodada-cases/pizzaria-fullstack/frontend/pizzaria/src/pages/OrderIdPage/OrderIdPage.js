@@ -1,7 +1,31 @@
+/**
+ * States
+ */
 import React, { useEffect, useState } from "react";
+/**
+ * Constants
+ */
 import { BASE_URL } from "../../constants/url";
+/**
+ * Routes
+ */
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+/**
+ * Styles
+ */
+ import { 
+     CardFlavor,
+   Container,
+   ImageHeader,
+   PizzaIngredients,
+   PizzaName,
+   PizzaPrice,
+} from "./styled";
+/**
+ * Assets
+*/
+import PedidoIdHeader from '../../assets/PedidoIdHeader.png'
 
 const OrderIdPage = () => {
 
@@ -24,14 +48,16 @@ const OrderIdPage = () => {
     }, [])
 
     return(
-        <div>
-            <h1>ORDER ID PAGE</h1>
-            <p>id: {orders.id}</p>
-            <p>quantidade: {orders.quantity}</p>
-            <p>nome: {orders.name}</p>
-            <p>valor: {orders.price}</p>
-            <p>ingredientes: {orders.ingredients}</p>
-        </div>
+        <Container>
+            <ImageHeader src={PedidoIdHeader} />
+            <CardFlavor>
+                <p>Pedido: {orders.id}</p>
+                <PizzaName>{orders.name}</PizzaName>
+                <PizzaIngredients>{orders.ingredients}</PizzaIngredients>
+                <PizzaPrice>A partir de $ {orders.price}</PizzaPrice>
+                <p>Qtd: {orders.quantity}</p>
+            </CardFlavor>
+        </Container>
     )
 }
 

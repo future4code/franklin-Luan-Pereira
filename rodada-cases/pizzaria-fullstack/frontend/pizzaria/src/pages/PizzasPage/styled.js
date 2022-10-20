@@ -36,13 +36,14 @@ export const CardFlavor = styled.div`
 export const PizzaName = styled.p`
     font-size: 30px;
     color: red;
-    font-weight: 600;
+    font-weight: bold;
     text-shadow: darkgray;
     text-transform: capitalize;
     margin: 0;
 `
 
 export const PizzaIngredients = styled.p`
+    text-transform: uppercase;
 `
 
 export const PizzaPrice = styled.p`

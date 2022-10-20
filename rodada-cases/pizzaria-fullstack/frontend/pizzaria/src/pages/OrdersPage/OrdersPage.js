@@ -1,6 +1,28 @@
-import React, { useEffect, useState } from "react";
-import { BASE_URL } from "../../constants/url";
+/**
+ * States
+ */
+ import React, { useEffect, useState } from "react";
+ /**
+  * Constants
+  */
+ import { BASE_URL } from "../../constants/url";
+ /**
+ * Routes
+ */
 import axios from "axios";
+/**
+ * Styles
+ */
+import { 
+    Card, 
+    Container,
+    ImageHeader,
+    Order
+} from "./styled";
+/**
+ * Assets
+*/
+import PedidosHeader from '../../assets/PedidosHeader.png'
 
 const OrdersPage = () => {
     const url = `${BASE_URL}/orders`
@@ -20,17 +42,16 @@ const OrdersPage = () => {
     },[])
 
     return(
-        <div>
-            <h1>ORDERS PAGE</h1>
+        <Container>
+            <ImageHeader src={PedidosHeader} />
             {orders.map((eachOrder) => {
                 return(
-                    <div>
-                        {/* <img src= /> */}
-                        <p> {eachOrder.order_items} </p>
-                    </div>
+                    <Card>
+                        <Order> {eachOrder.order_items} </Order>
+                    </Card>
                 )}
             )}
-        </div>
+        </Container>
     )
 }
 
