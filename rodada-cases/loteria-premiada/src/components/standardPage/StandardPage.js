@@ -23,7 +23,6 @@ import {
 const StandardPage = (
     {
         loteryName,
-        loteryId,
         loteryConcourseId,
         loteryConcourseDate,
         loteryConcourseDrawnNumbers,
@@ -44,10 +43,6 @@ const StandardPage = (
     const options = ["Selecione","Mega-sena", "Quina", "Lotofacil", "Lotomania", "Timemania", "Dia de sorte"]
     
     // Aqui estamos transformando a data recebida no retorno da API
-    let dateConcourse = loteryConcourseDate.slice(0,10).split('-')
-    console.log(dateConcourse)
-    dateConcourse = `${dateConcourse[2]}/${dateConcourse[1]}/${dateConcourse[0]}`
-    console.log(dateConcourse)
 
     return(
         <PageResults>
@@ -71,7 +66,7 @@ const StandardPage = (
                 <InfoLotery className="concourse">
                     <NumberLotery className='info'>
                         <p>CONCURSO</p>
-                        <span className='number'>{loteryConcourseId} - {dateConcourse}</span>
+                        <span className='number'>{loteryConcourseId} - {loteryConcourseDate}</span>
                     </NumberLotery>
 
                 </InfoLotery>
