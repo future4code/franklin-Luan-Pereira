@@ -9,7 +9,7 @@ import { BASE_URL } from "../../constants/url";
 /**
  * Routes
  */
-import { useNavigate, useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 /**
  * Styles
@@ -31,6 +31,7 @@ import PedidoIdHeader from '../../assets/PedidoIdHeader.png'
 
 const OrderIdPage = () => {
 
+    const navigate = useNavigate()
     const params = useParams()
 
     const url = `${BASE_URL}/orders/${params.id}`
@@ -46,6 +47,7 @@ const OrderIdPage = () => {
             .catch((error) => {
                 console.log(error)
                 alert("Erro ao encontrar Pedido")
+                navigate(-1)
             })
     }, [])
 

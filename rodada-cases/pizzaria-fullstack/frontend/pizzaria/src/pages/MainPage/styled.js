@@ -1,15 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    background-image: url('./assets/MainBG.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-color: #00000059;
-    background-blend-mode: overlay;
-    height: 120vh;
-    display: flex;
-    justify-content: center;
+    background-color: transparent;
 `
 
 export const MenuSession = styled.div`
