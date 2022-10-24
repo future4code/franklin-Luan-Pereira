@@ -1,0 +1,16 @@
+#root {
+  background-color: #efefef;
+}
+
+html,
+body {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+
