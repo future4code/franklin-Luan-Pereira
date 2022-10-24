@@ -33,10 +33,11 @@ export const OrderNumber = styled.p`
 `
 
 export const PizzaName = styled.p`
-    font-size: 35px;
+    font-family: 'Lobster', cursive;
+    font-size: 55px;
     color: red;
     font-weight: 600;
-    text-shadow: darkgray;
+    text-shadow: 1px 1px 1px darkgray;
     text-transform: capitalize;
     margin: 0;
 `

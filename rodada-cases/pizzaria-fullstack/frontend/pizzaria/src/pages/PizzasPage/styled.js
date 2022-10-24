@@ -37,10 +37,11 @@ export const CardFlavor = styled.div`
 
 
 export const PizzaName = styled.p`
-    font-size: 40px;
+    font-family: 'Lobster', cursive;
+    font-size: 55px;
     color: red;
     font-weight: bold;
-    text-shadow: darkgray;
+    text-shadow: 1px 1px 1px darkgray;
     text-transform: capitalize;
     margin: 0;
 `
