@@ -1,0 +1,113 @@
+import styled from 'styled-components';
+
+export const Container = styled.div`
+    background-color: transparent;
+`
+
+export const MenuSession = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    /* border: 1px solid white; */
+    width: max-content;
+    margin: 10% 0;
+`
+
+export const ImageLogo = styled.img`
+    height: 400px;
+`
+
+export const Menu = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* border: 1px solid white; */
+    width: 800px;
+`
+
+export const PizzaFlavorsButton = styled.button`
+    padding: 12px 30%;
+    width: 100%;
+    border-radius: 20px;
+    border: none;
+    background-color: #c73146;
+    color: white;
+    margin-bottom: 28px;
+
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    transition: .35s;
+    &:hover{
+        background-color: whitesmoke;
+        color: #c73146;
+    }
+
+`
+
+export const InputOrder = styled.input`
+    padding: 8px 0;
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    border-top: none;
+    border-bottom: .5px solid;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 28px;
+
+
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+`
+
+export const ButtonOrder = styled.button`
+    padding: 12px 30%;
+    width: 100%;
+    border-radius: 20px;
+    background-color: #c73146;
+    color: white;
+    margin-bottom: 28px;
+    border: none;
+    cursor: pointer;
+
+
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    transition: .35s;
+    &:hover{
+        background-color: whitesmoke;
+        color: #c73146;
+    }
+    
+`
+
+export const ButtonAllOrders = styled.button`
+    padding: 12px 30%;
+    width: 100%;
+    border-radius: 20px;
+    background-color: #c73146;
+    color: white;
+    margin-bottom: 8px;
+    border: none;
+    cursor: pointer;
+
+
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    transition: .35s;
+    &:hover{
+        background-color: whitesmoke;
+        color: #c73146;
+    }
+
+`
